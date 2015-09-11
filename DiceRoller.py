@@ -17,7 +17,7 @@ def interpretRoll(dictionary):
   myRoll = octaDie()
   myResult = dictionary.get(myRoll)
   return myResult
-  
+
 def attackOctaDie():
   """Rolls a hit (37.5% probability), crit (12.5%), focus (25%) or blank (25%)"""
   return interpretRoll(rollInterpretationsAttack)
@@ -35,12 +35,13 @@ def multiRollDefendOctaDie(count):
 def multiRollAttackOctaDie(count):
   return multiRollOctaDie(count, attackOctaDie)
 
-attackCount = input("Number of attack dice: ")
+if __name__ == '__main__':
+  attackCount = input("Number of attack dice: ")
 
-defendCount = input("Number of defence dice: ")
-print
-print "Attacker:"
-print multiRollAttackOctaDie(attackCount)
-print
-print "Defender:"
-print multiRollDefendOctaDie(defendCount)
+  defendCount = input("Number of defence dice: ")
+  print
+  print "Attacker:"
+  print multiRollAttackOctaDie(attackCount)
+  print
+  print "Defender:"
+  print multiRollDefendOctaDie(defendCount)
